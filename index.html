@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Relaxation Booking Page</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ヘッダー -->
+<header class="site-header">
+  <div class="header-inner">
+    <h1 class="header-title">BANANA8</h1>
+    <!-- ハンバーガーボタン（navの前に移動） -->
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <!-- ナビゲーションメニュー -->
+    <nav class="site-nav">
+      <ul id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="staff.html">Staff</a></li>
+        <li><a href="index.html?scrollTo=course">Course</a></li>
+        <li><a href="index.html?scrollTo=contact">Booking</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ▼▼ ヒーロー部分　▼▼ -->
+  <div class="hero">
+    <div class="overlay">
+      <h1>TOKYO GAY SPA BANANA8</h1>
+    </div>
+  </div>
+
+<!-- ▼▼ サービス紹介　▼▼ -->
+<section class="service">
+  <h2>Our Service</h2>
+<p>
+  We provide full-body oil massages using high-quality oils, along with quality time with our staff.<br>
+  Relax and unwind as you recover from travel or work-related fatigue.<br>
+</p>
+  <p style="color: #b00; font-weight: bold;">
+    * Our service is exclusively for men.<br>
+    We do not accept female clients.<br>
+    Also, clients under 18 years of age (including high school students) are not permitted.
+  </p>
+</section>
+
+<!-- ▼▼ スタッフ紹介　▼▼ -->
+<section class="staff-link-section">
+  <a href="staff.html" class="staff-banner-link">
+    <div class="staff-banner-overlay">
+      <span class="staff-banner-text">Meet Our Staff</span>
+    </div>
+    <img src="images/STAFFTOP.PNG" alt="スタッフ紹介" class="staff-banner" />
+  </a>
+</section>
+
+<!-- ▼▼ コース紹介　▼▼ -->
+<section id="course">
+  <h2>Our Courses</h2>
+  <p>
+    All courses include oil massage and relaxing time with a staff member.<br>
+  </p>
+  <table class="course-table">
+    <thead>
+      <tr>
+        <th>Duration</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>60 min</td><td>10,000 JPY</td></tr>
+      <tr><td>90 min</td><td>12,000 JPY</td></tr>
+      <tr><td>120 min</td><td>15,000 JPY</td></tr>
+    </tbody>
+  </table>
+  <p class="transport-fee">* Transportation fee: 1,000 JPY (2,000 JPY for outside of 23 wards)</p>
+</section>
+
+<!-- ▼▼ 予約の流れ　▼▼ -->
+<section class="booking-flow">
+  <h2>Booking Flow</h2>
+  <div class="flow-steps">
+    <div class="step-card">
+      <div class="icon">📩</div>
+      <h3>STEP 1</h3>
+      <p>Select your preferred staff and time,<br> then submit the booking form.</p>
+    </div>
+    <div class="step-card">
+      <div class="icon">✅</div>
+      <h3>STEP 2</h3>
+      <p>We will contact you<br> to confirm your booking.</p>
+    </div>
+    <div class="step-card">
+      <div class="icon">🛏️</div>
+      <h3>STEP 3</h3>
+  <p>Our staff will visit you at your hotel.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ▼▼ 利用ガイド　▼▼ -->
+<section class="terms-section">
+  <h3>ご利用ガイド / User Guide</h3>
+ <p>
+  This service is for men aged 18 and over, intended solely for relaxation.<br>
+  We do not provide any sexual services.<br>
+  Please refrain from excessive physical contact or asking staff for personal information.<br>
+  We appreciate your understanding and cooperation in helping us maintain a safe and comfortable environment for all clients.
+</p>
+
+</section>
+
+<!-- ▼▼ 予約フォーム　▼▼ -->
+<section class="form" id="contact">
+  <h2>Booking Form</h2>
+  <form action="https://formsubmit.io/send/wanriben@gmail.com" method="POST">
+    <label for="name">Your Name</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="staff">Preferred Staff</label>
+    <select id="staff" name="staff">
+      <option value="">Please select</option>
+      <option value="AREK">AREK</option>
+      <option value="KEN">KEN</option>
+      <option value="COMING SOON">COMING SOON</option>
+    </select>
+
+    <!-- 1st Preference -->
+    <label for="date1">1st Preferred Date:</label>
+    <input type="date" id="date1" name="date1" required>
+    <label>1st Preferred Time:</label>
+    <div class="time-select">
+      <select name="ampm1" required>
+        <option value="">AM/PM</option>
+        <option value="AM">AM</option>
+        <option value="PM">PM</option>
+      </select>
+      <select name="hour1" required>
+        <option value="">Hour</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+      </select>
+      <select name="minute1" required>
+        <option value="">Min</option>
+        <option value="00">00</option>
+        <option value="30">30</option>
+      </select>
+    </div>
+
+    <!-- 2nd Preference -->
+    <label for="date2">2nd Preferred Date:</label>
+    <input type="date" id="date2" name="date2">
+    <label>2nd Preferred Time:</label>
+    <div class="time-select">
+      <select name="ampm2">
+        <option value="">AM/PM</option>
+        <option value="AM">AM</option>
+        <option value="PM">PM</option>
+      </select>
+      <select name="hour2">
+        <option value="">Hour</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+      </select>
+      <select name="minute2">
+        <option value="">Min</option>
+        <option value="00">00</option>
+        <option value="30">30</option>
+      </select>
+    </div>
+
+    <!-- 3rd Preference -->
+    <label for="date3">3rd Preferred Date:</label>
+    <input type="date" id="date3" name="date3">
+    <label>3rd Preferred Time:</label>
+    <div class="time-select">
+      <select name="ampm3">
+        <option value="">AM/PM</option>
+        <option value="AM">AM</option>
+        <option value="PM">PM</option>
+      </select>
+      <select name="hour3">
+        <option value="">Hour</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+      </select>
+      <select name="minute3">
+        <option value="">Min</option>
+        <option value="00">00</option>
+        <option value="30">30</option>
+      </select>
+    </div>
+
+    <label for="contact">Contact (Wechat / WhatsApp / Email)</label>
+    <input type="text" id="contact" name="contact">
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" required>
+
+    <button type="submit">Submit</button>
+  </form>
+</section>
+
+  <!-- ▼▼ スタッフ募集リンクバナー（index.htmlの予約フォームの下に設置）▼▼ -->
+  <div class="staff-recruit-link" style="text-align:center; margin-top: 3rem;">
+    <a href="recruit.html" style="display:inline-block; position:relative; width:100%; max-width:700px;">
+      <img src="images/recruit-banner.png" alt="スタッフ募集中"
+           style="width:100%; height:120px; object-fit:cover; object-position:center 80%;
+                  border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+      <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+                  color:white; font-size:1.5rem; font-weight:bold;
+                  white-space: nowrap;
+                  text-shadow:1px 1px 3px rgba(0,0,0,0.7);">
+        スタッフ募集中
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 TOKYO GAY SPA BANANA8. All rights reserved.</p>
+</footer>
+
+<!-- ▼▼ 年齢確認モーダル ▼▼ -->
+<div id="ageModal" class="age-modal">
+  <div class="age-modal-content">
+    <h2>Are you 18 or older?</h2>
+   <p>This website is intended for users who are 18 years or older.</p>
+    <div class="age-modal-buttons">
+      <button onclick="confirmAge(true)">YES</button>
+      <button onclick="confirmAge(false)">NO</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("navMenu");
+    menu.classList.toggle("active");
+  }
+
+  function confirmAge(isAdult) {
+    if (isAdult) {
+      localStorage.setItem("ageConfirmed", "true");
+      document.getElementById("ageModal").style.display = "none";
+    } else {
+      window.location.href = "https://www.google.com";
+    }
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const isConfirmed = localStorage.getItem("ageConfirmed") === "true";
+    const isTopPage = location.pathname === "/banana8-website/" || location.pathname.endsWith("/index.html");
+    if (!isConfirmed && isTopPage) {
+      document.getElementById("ageModal").style.display = "flex";
+    } else {
+      document.getElementById("ageModal").style.display = "none";
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const staff = params.get("staff");
+    if (staff) {
+      const staffInput = document.getElementById("staff");
+      if (staffInput) staffInput.value = staff;
+    }
+    const target = params.get("scrollTo");
+    if (target) {
+      const el = document.getElementById(target);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+</script>
+
+</body>
+</html>

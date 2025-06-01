@@ -1,0 +1,628 @@
+/* ▼▼▼ ベース設定 ▼▼▼ */
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+section {
+  padding: 2rem 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h1, h2 {
+  margin-bottom: 1rem;
+}
+
+
+/* ▼▼▼ ヘッダー ▼▼▼ */
+.site-header {
+  background-image: url('images/header.png');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.header-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.site-nav ul {
+  list-style: none;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+  transition: color 0.3s;
+}
+
+.site-nav a:hover {
+  color: #1abc9c;
+}
+
+
+/* ▼▼▼ ヒーロー ▼▼▼ */
+.hero {
+  background-image: url('images/hero.png');
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+}
+
+@media (min-width: 768px) {
+  .hero h1 {
+    font-size: 4rem;
+  }
+}
+
+
+/* ▼▼▼ サービス紹介 ▼▼▼ */
+.service {
+  text-align: center;
+  max-width: 800px;
+}
+
+
+/* ▼▼▼ スタッフ紹介（一覧） ▼▼▼ */
+.staff-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.staff-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s;
+  text-align: center;
+  width: 200px;
+}
+
+.staff-card:hover {
+  transform: translateY(-5px);
+}
+
+.staff-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+.staff-card h2 {
+  font-size: 1.1rem;
+  padding: 0.8rem;
+  margin: 0;
+  text-align: center;
+}
+
+/* 仮のスタッフカード */
+.staff-card.placeholder img {
+  background-color: #ddd;
+  display: block;
+  height: 180px;
+  width: 100%;
+}
+
+.staff-card.placeholder h2 {
+  color: #aaa;
+  font-style: italic;
+}
+
+.back-link {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* ▼▼ スタッフ紹介リンクバナー ▼▼ */
+/* 親：中央寄せ */
+.staff-link-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  padding: 0;
+}
+
+/* 子：最大横幅を任意に拡大可能 */
+.staff-banner-link {
+  display: block;
+  width: 100%;
+  max-width: 1500px; /* ← 必要に応じてもっと広げてもOK */
+  position: relative;
+}
+
+/* 画像バナーの見た目 */
+.staff-banner {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.staff-banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+.staff-banner-link:hover .staff-banner-overlay {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.staff-banner-text {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+
+/* ▼▼▼ コース紹介 ▼▼▼ */
+#course {
+  padding: 2rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.course-table {
+  margin: 1rem auto;
+  width: 100%;
+  max-width: 600px;
+  border-collapse: collapse;
+}
+
+.course-table th, .course-table td {
+  border: 1px solid #ccc;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.course-table th {
+  background-color: #f0f0f0;
+}
+
+.transport-fee {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+
+/* ▼▼▼ 予約フォーム ▼▼▼ */
+.form form {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+}
+
+.form label {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.form input,
+.form select,
+.form button {
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.form button {
+  background-color: #1abc9c;
+  color: white;
+  border: none;
+  margin-top: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form button:hover {
+  background-color: #16a085;
+}
+
+.time-select {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.terms-section {
+  text-align: center;
+  padding: 2rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.form h2 {
+  text-align: center;
+}
+
+
+/* ▼▼▼ モーダル（スタッフ詳細） ▼▼▼ */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  max-width: 700px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 10px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.close {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10001;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 4px 10px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+
+.slider {
+  position: relative;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.slider img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.slide-btn.left {
+  left: 0;
+}
+
+.slide-btn.right {
+  right: 0;
+}
+
+.modal-details p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.modal-details h2 {
+  margin-top: 0;
+}
+
+.reserve-link {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #1abc9c;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.reserve-link:hover {
+  background-color: #16a085;
+}
+
+
+
+/* ▼▼▼ レスポンシブ ▼▼▼ */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .course-table th, .course-table td {
+    font-size: 0.85rem;
+    padding: 0.5rem;
+  }
+
+  .form input,
+  .form select,
+  .form button {
+    font-size: 0.95rem;
+  }
+
+  .staff-card {
+    width: 45%;
+  }
+}
+
+
+/* ▼▼▼ フッター ▼▼▼ */
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+  background-color: #000; /* 背景を黒に */
+  color: #fff; /* 文字を白に */
+}
+
+
+/* ▼▼▼ スタッフ募集ページ用 ▼▼▼ */
+
+form label {
+  margin-top: 1rem;
+  font-weight: bold;
+  display: block;
+}
+
+form input,
+form textarea,
+form button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+form button {
+  background-color: #1abc9c;
+  color: white;
+  border: none;
+  margin-top: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #16a085;
+}
+
+.recruit-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  text-align: center;
+}
+
+
+
+/* ▼ 予約の流れ ▼ */
+.booking-flow {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #f9f9f9;
+}
+
+.flow-steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.step-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1rem;
+  width: 260px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.step-card .icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.step-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+
+
+
+
+
+/* ▼ ハンバーガーメニュー用 ▼ */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  position: absolute; /* ←これが重要！ */
+  top: 1rem;
+  right: 1rem;
+  z-index: 1100; /* メニューより上に出す */
+}
+
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .site-nav ul {
+    display: none;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .site-nav ul.active {
+    display: flex;
+  }
+
+  .site-nav a {
+    color: white;
+    padding: 1rem 0;
+    display: block;
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .site-nav ul {
+    display: flex;
+  }
+}
+
+
+/* ▼ 18禁チェック ▼ */
+
+.age-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.age-modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+.age-modal-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.age-modal button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.age-modal button:first-child {
+  background-color: #1abc9c;
+  color: white;
+}
+
+.age-modal button:last-child {
+  background-color: #ccc;
+  color: #333;
+}
+
+/* ▼ 角丸なくす ▼ */
+* {
+  border-radius: 0 !important;
+}
+
+

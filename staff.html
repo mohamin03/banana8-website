@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff - TOKYO GAY SPA BANANA8</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="site-header">
+  <div class="header-inner">
+    <h1 class="header-title">BANANA8</h1>
+
+    <!-- ハンバーガーボタン -->
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+    <!-- ナビゲーションメニュー -->
+    <nav class="site-nav">
+      <ul id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="staff.html">Staff</a></li>
+        <li><a href="index.html?scrollTo=course">Course</a></li>
+        <li><a href="index.html?scrollTo=contact">Booking</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section>
+  <h2 class="section-title">Staff Profiles</h2>
+  <div class="staff-list">
+
+    <!-- ▼▼▼ Staff Cards ▼▼▼ -->
+    <div class="staff-card" onclick="openModal(0)">
+      <img src="images/AREK.png" alt="AREK">
+      <h2>AREK</h2>
+    </div>
+
+    <div class="staff-card" onclick="openModal(1)">
+      <img src="images/KEN.png" alt="KEN">
+      <h2>KEN</h2>
+    </div>
+
+    <div class="staff-card" onclick="openModal(2)">
+      <img src="images/NOIMAGE.png" alt="TEMP">
+      <h2>TEMP</h2>
+    </div>
+
+    <div class="staff-card" onclick="openModal(3)">
+      <img src="images/NOIMAGE.png" alt="TEMP">
+      <h2>TEMP</h2>
+    </div>
+
+    <div class="staff-card" onclick="openModal(4)">
+      <img src="images/NOIMAGE.png" alt="TEMP">
+      <h2>TEMP</h2>
+    </div>
+
+  </div>
+</section>
+<!-- ▲▲▲ Staff Cards ▲▲▲ -->
+
+<!-- Staff Detail Modal -->
+<div id="staffModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div class="slider">
+      <button class="slide-btn left" onclick="prevImage()">&#10094;</button>
+      <img id="modalImage" src="" alt="Slide Image">
+      <button class="slide-btn right" onclick="nextImage()">&#10095;</button>
+    </div>
+    <div class="modal-details">
+      <h2 id="modalName"></h2>
+      <p><strong>Height:</strong> <span id="height"></span></p>
+      <p><strong>Weight:</strong> <span id="weight"></span></p>
+      <p><strong>Age:</strong> <span id="age"></span></p>
+      <p><strong>Sports Experience:</strong> <span id="sports"></span></p>
+      <p><strong>Hobbies/Skills:</strong> <span id="hobby"></span></p>
+      <p><strong>English Available:</strong> <span id="english"></span></p>
+      <p><strong>Introduction:</strong> <span id="intro"></span></p>
+    </div>
+    <div style="text-align: center; margin-top: 1.5rem;">
+      <a id="reserveButton" class="reserve-link" href="#">Book This Staff</a>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<footer>
+  <p>&copy; 2025 TOKYO GAY SPA BANANA8. All rights reserved.</p>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("navMenu");
+    menu.classList.toggle("active");
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+
+<!-- recruit.html（新規ファイル） -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>スタッフ募集 - BANANA8</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <header class="site-header">
+  <div class="header-inner">
+    <h1 class="header-title">BANANA8</h1>
+
+    <!-- ハンバーガーボタン -->
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+    <!-- ナビゲーションメニュー -->
+    <nav class="site-nav">
+      <ul id="navMenu">
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="staff.html">スタッフ紹介</a></li>
+        <li><a href="index.html?scrollTo=course">コース</a></li>
+        <li><a href="index.html?scrollTo=contact">予約</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+  <section>
+    <h2 class="recruit-title">スタッフ募集</h2>
+    <p style="text-align:center; max-width:600px; margin:0 auto 2rem;">
+      当店では、男性スタッフを募集しています。未経験でも大丈夫です。<br>
+      人と接することが好きな方、マッサージに興味がある方、<br>ご応募お待ちしております。
+    </p>
+
+    <form action="https://formsubmit.io/send/your@email.com" method="POST" style="max-width:600px; margin:0 auto;">
+      <label for="name">名前（必須）</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">メールアドレス（必須）</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="tel">電話番号（任意）</label>
+      <input type="tel" id="tel" name="tel">
+
+      <label for="body">身長・体重・年齢（必須）</label>
+      <input type="text" id="body" name="body" required>
+
+      <label for="exp">マッサージ経験（必須）</label>
+      <input type="text" id="exp" name="exp" required>
+
+      <label for="message">その他ご質問・PRなど（任意）</label>
+      <textarea id="message" name="message" rows="5"></textarea>
+
+      <button type="submit">送信する</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 TOKYO GAY SPA BANANA8. All rights reserved.</p>
+  </footer>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("navMenu");
+    menu.classList.toggle("active");
+  }
+</script>
+
+
+</body>
+</html>
